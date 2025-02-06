@@ -9,9 +9,7 @@
                 <img src="../assets/logo-ticket.svg" alt="Get Your Tickets" class="h-8">
             </router-link>
         </div>
-        <p>
-            © 2025 Frontend Challenge
-        </p>
+        <p> © 2025 Frontend Challenge </p>
     </footer>
 </template>
 

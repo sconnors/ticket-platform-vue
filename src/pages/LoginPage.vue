@@ -4,7 +4,7 @@
     import { computed, ref } from 'vue';
     import { useRouter } from 'vue-router';
     import { useUserStore } from '@/store';
-    import type { Error } from '@/utils/types';
+    import type { Error, GenericValue } from '@/utils/types';
 
     const router = useRouter();
     const userStore =  useUserStore();
@@ -14,9 +14,10 @@
         passowrd: ''
     });
 
+
     const loading = computed(() => userStore.getLoading);
 
-    const resolver = ({ values }: any) => {
+    const resolver = ({ values }: { values: GenericValue } ) => {
         const errors: Error = {
             username: [],
             password: []
@@ -73,7 +74,7 @@
                     </p> 
                 </IftaLabel>
 
-                <Button type="submit" label="Submit" :loading="loading" class="w-full" />
+                <Button type="submit" label="Submit" :loading="loading" severity="success" class="w-full" />
             </div>
         </Form>
     </section>

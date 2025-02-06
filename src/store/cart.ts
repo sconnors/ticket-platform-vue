@@ -15,7 +15,7 @@ export const useCartStore = defineStore('cart', {
         getPriceTotal: (state) => state.items.reduce((acc:number, curr: Ticket) => acc + ( curr.price * curr.amount), 0)
     },
     actions: {
-        async addToCart (value: any) {
+        async addToCart (value: Ticket) {
             if (this.loading) return;
 
             try {

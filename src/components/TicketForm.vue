@@ -1,9 +1,10 @@
 <script setup lang="ts">
-    import { Button, Checkbox, DatePicker, IftaLabel, InputNumber, InputText, Textarea } from 'primevue';
+    import { Button, Checkbox, IftaLabel, InputNumber, InputText, Textarea } from 'primevue';
     import { Form, type FormSubmitEvent } from '@primevue/forms';
     import { ref } from 'vue';
     import { useTicketStore } from '@/store/tickets';
-    import type { Error } from '@/utils/types';
+    import type { Error, GenericValue } from '@/utils/types';
+    
 
     const ticketStore = useTicketStore();
 
@@ -14,7 +15,6 @@
         isVIP: false,
         count: 1,
         price: 0,
-        date: new Date(),
         amount: 0,
     });
 
@@ -32,7 +32,7 @@
         }
     }
 
-    const resolver = ({ values }: any) => {
+    const resolver = ({ values }: { values: GenericValue }) => {
         const errors: Error = {
             name: [],
             description: []
@@ -53,8 +53,6 @@
 
 <template>
     <Form v-slot="$form" :defaultTicket :resolver @submit="createTicket" class="w-full">
-            
-        <!-- Add required fields -->
         <div class="flex flex-col justify-center items-center gap-4">
             <IftaLabel class="w-full">
                 <label htmlFor="name">Ticket Name:</label>
@@ -81,19 +79,13 @@
                 <InputNumber inputId="price" name="price" v-model="ticketForm.price" showButtons mode="currency" currency="USD" class="w-full" />
                 <label htmlFor="price">Price:</label>
             </IftaLabel>                
-            
-            <!-- added date picker for future feature -->
-            <!-- <IftaLabel class="w-full">
-                <DatePicker  v-model="ticketForm.date" inputId="date" showIcon showTime hourFormat="12" iconDisplay="input" class="w-full"/>
-                <label for="date">Date</label>
-            </IftaLabel>  -->
 
             <div class="flex justify-center items-center gap-2">
                 <label htmlFor="isVIP" class="label">VIP:</label>
                 <Checkbox inputId="isVIP" name="isVIP" v-model="ticketForm.isVIP" binary  class="w-full" />
             </div>                
 
-            <Button type="submit" label="Create Ticket" :loading="ticketStore.getLoading" class="w-full" />
+            <Button type="submit" label="Create Ticket" :loading="ticketStore.getLoading" severity="success" class="w-full" />
         </div>
     </Form>
 </template>

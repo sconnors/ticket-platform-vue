@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import router from '@/router';
-import { useCartStore, useUserStore } from '@/store';
-import { computed } from 'vue';
+    import router from '@/router';
+    import { useCartStore, useUserStore } from '@/store';
+    import { computed } from 'vue';
+
     const cartStore = useCartStore();
     const userStore = useUserStore();
 
@@ -16,7 +17,6 @@ import { computed } from 'vue';
             console.error('Error deleting data:', error);
         }  
     };
-
 </script>
 
 <template>
@@ -37,7 +37,7 @@ import { computed } from 'vue';
                 </li>
                 <li>
                     <router-link to="/cart" class="flex gap-2 items-center hover:bg-gray-100 p-2 rounded-sm" activeClass="bg-gray-100">
-                        <span class="pi pi-shopping-cart text-md!"  :class="{ 'text-[#10b981]!': cartStore.getItems.length }"></span>
+                        <span class="pi pi-shopping-cart text-md!"  :class="{ 'text-[#178740]!': cartStore.getItems.length }"></span>
                         <span>Cart</span>
                     </router-link>
                 </li>                

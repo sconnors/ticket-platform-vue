@@ -16,15 +16,13 @@
         }    
     };
 
-    const itemTotal = computed(() => { 
-        return formatCurrency(props.itemData.price);
-    });
+    const itemTotal = computed(() => formatCurrency(props.itemData.price) );
 </script>
 
 <template>
     <div class="flex justify-between items-center py-2 px-4 gap-4 w-full">
         <div>
-            <span class="relative! flex justify-center items-center pi pi-ticket text-[42px]! md:text-[64px]! text-black" :class="{ 'text-[#E5B80B]!': itemData.isVIP }">
+            <span class="relative! flex justify-center items-center pi pi-ticket text-[42px]! md:text-[64px]! text-black" :class="{ 'text-[#8C742B]!': itemData.isVIP }">
                 <span v-if="itemData.isVIP" class="vip-center text-[12px]! md:text-[16px]!">VIP</span>  
             </span>
         </div>

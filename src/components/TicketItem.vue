@@ -35,16 +35,14 @@
         }    
     };
 
-    const ticketPrice = computed(() => { 
-        return formatCurrency(props.ticketData.price);
-    });
+    const ticketPrice = computed(() => formatCurrency(props.ticketData.price));
 </script>
 
 <template>
     <div class="flex items-center py-2 px-4 mb-4 gap-4 border border-[#cbd5e1] rounded-md w-full hover:shadow-md transition">
         <div>
-            <span class="relative! flex justify-center items-center pi pi-ticket text-[42px]! md:text-[64px]! text-black" :class="{ 'text-[#E5B80B]!': ticketData.isVIP }">
-                <span  v-if="ticketData.isVIP" class="vip-center text-[12px]! md:text-[16px]!">VIP</span>  
+            <span class="relative! flex justify-center items-center pi pi-ticket text-[42px]! md:text-[64px]! text-black" :class="{ 'text-[#8C742B]!': ticketData.isVIP }">
+                <span  v-if="ticketData.isVIP" class="vip-center text-[12px]! md:text-[18px]!">VIP</span>  
             </span>
         </div>
         <div class="basis-1/3">
@@ -60,7 +58,7 @@
 
             <template v-if="!isAdmin">
                 <Select v-model="selectedAmount" id="amount" :options="ticketAmount" aria-label="Select Amount" />                
-                <Button icon="pi pi-shopping-cart" @click="addToCart(ticketData)" :loading="cartStore.getLoading" aria-label="Add to Shopping Cart" />
+                <Button icon="pi pi-shopping-cart" @click="addToCart(ticketData)" :loading="cartStore.getLoading" severity="success" aria-label="Add to Shopping Cart" />
             </template>
 
             <template v-if="isAdmin">

@@ -14,7 +14,7 @@ export const useTicketStore = defineStore('ticket', {
         getDeleting: (state) => state.deleting
     },
     actions: {
-        async addTicket (value:Ticket) {
+        async addTicket (value: Ticket) {
             if (this.loading) return;
 
             try {

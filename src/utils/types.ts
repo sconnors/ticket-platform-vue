@@ -5,7 +5,6 @@ export interface Ticket {
     isVIP: boolean;
     count: number;
     price: number;
-    date?: Date; 
     amount: number;
 }
 
@@ -15,4 +14,8 @@ export interface ErrorMessage {
 
 export interface Error {
     [key: string]: ErrorMessage[];
+}
+
+export interface GenericValue {
+    [key: string] : string;
 }
