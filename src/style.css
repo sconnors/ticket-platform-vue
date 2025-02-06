@@ -12,10 +12,11 @@ html, body {
     min-height: 100%; 
 }
 
-.p-button-success {
-    background: #178740 !important;
+.p-button-success,
+.p-checkbox-checked .p-checkbox-box {
+    background-color: #178740 !important;
 }
 
 .p-button-success:hover {
-    background:#146c34 !important;
+    background-color:#146c34 !important;
 }

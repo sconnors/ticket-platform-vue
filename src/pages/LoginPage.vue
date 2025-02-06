@@ -55,7 +55,7 @@
         <h1 class="text-3xl lg:text-4xl mb-2">Welcome Back</h1>
         <p class="text-xl text-center mb-12">Log in to access your account and explore exclusive content.</p>
 
-        <Form v-slot="$form" :initialValues :resolver @submit="login" class="p-8 border border-[#cbd5e1] w-full rounded-md sm:w-96">
+        <Form v-slot="$form" :initialValues :resolver @submit="login" class="p-8 w-full rounded-md sm:w-96">
 
             <div class="flex flex-col justify-center items-center gap-4 ">
                 <IftaLabel class="w-full">

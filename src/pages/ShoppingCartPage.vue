@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <div class="flex flex-col md:flex-row border border-[#cbd5e1] rounded-md overflow-hidden">
+    <div class="flex flex-col md:flex-row rounded-md overflow-hidden">
         <section class="basis-3/4 p-8">
             <div class="flex justify-between items-center gap-4 mb-10">
                 <h1 class="text-3xl lg:text-4xl mb-2">Shopping Cart</h1>
