@@ -10,10 +10,16 @@ Run the following commands in the project directory:
 
 ```npm run dev```
 
+
+## Notes
+- You need to be logged in order to access the Admin page 
+- Logging in requires any string for both 'Username' and 'Password'
+- The application state does not perist on page reload
+
+
 ## Run Tests
 
 ```npm run test```
-
 
 
 # Exercise - Vue 3 + TypeScript + Vite
