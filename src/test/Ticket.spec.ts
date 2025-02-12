@@ -62,7 +62,7 @@ describe('Ticket Component', () => {
         it('renders VIP ticket and "Delete" button', async () => {
             await wrapper.vm.$nextTick(); 
 
-            expect(wrapper.find('.vip-center').exists()).toBe(true); 
+            expect(wrapper.find('.abs-center').exists()).toBe(true); 
             expect(wrapper.find('button[aria-label="Delete ticket"]').exists()).toBe(true);
         });
     });

@@ -1,11 +1,7 @@
 <script setup lang="ts">
     import type { HeroProps } from '@/utils/types';
 
-    const { subtitle, title } = withDefaults(
-        defineProps<HeroProps>(), {
-            subtitle: ''
-        }
-    );
+    const { subtitle = '', title } = defineProps<HeroProps>();
 </script>
 
 

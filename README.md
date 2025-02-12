@@ -1,7 +1,4 @@
 # Getting Started
-
-Download the project, please do not fork the project.
-
 Make sure you have latest node.js installed on your machine.
 
 Run the following commands in the project directory:
