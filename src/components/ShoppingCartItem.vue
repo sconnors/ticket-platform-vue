@@ -22,8 +22,9 @@
 <template>
     <div class="flex justify-between items-center py-2 px-4 gap-4 w-full">
         <div>
-            <span class="relative! flex justify-center items-center pi pi-ticket text-[42px]! md:text-[64px]! text-black" :class="{ 'text-[#8C742B]!': itemData.isVIP }">
-                <span v-if="itemData.isVIP" class="vip-center text-[12px]! md:text-[16px]!">VIP</span>  
+            <span class="relative! flex justify-center items-center pi pi-ticket text-[42px]! md:text-[64px]! text-black" 
+                :class="{ 'text-[#8C742B]!': itemData.isVIP }">
+                <span v-if="itemData.isVIP" class="abs-center text-[12px]! md:text-[16px]!">VIP</span>  
             </span>
         </div>
         <div class="basis-1/2">
@@ -32,19 +33,13 @@
         </div>
         <div class="flex gap-4 justify-center items-center ml-auto" >
             <p class="font-semibold"> {{ itemTotal }} x {{ itemData.amount }}</p>
-            <Button icon="pi pi-trash" @click="deleteItem(itemData.id)" severity="danger" :loading="cartStore.getDeleting" aria-label="Delete Item"  />
+            <Button 
+                icon="pi pi-trash" 
+                @click="deleteItem(itemData.id)" 
+                severity="danger" 
+                :loading="cartStore.getDeleting" 
+                aria-label="Delete Item"  
+            />
         </div>
     </div>
 </template>
-
-<style scoped>
-
-    .vip-center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-weight: 600;
-    }
-
-</style>

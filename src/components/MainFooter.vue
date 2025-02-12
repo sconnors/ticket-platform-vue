@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <footer class="flex justify-between items-center p-8 text-[#161616]">
         <div>
@@ -12,7 +8,3 @@
         <p> © 2025 Frontend Challenge </p>
     </footer>
 </template>
-
-<style scoped>
-
-</style>

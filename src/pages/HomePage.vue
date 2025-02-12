@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { computed } from 'vue';
     import { useTicketStore } from '@/store';
-    import { Ticket } from '@/components';
+    import { PageHeader, Ticket } from '@/components';
 
     const ticketStore = useTicketStore();
     const tickets = computed(() => ticketStore.getTickets);
@@ -9,8 +9,10 @@
 
 <template>
     <section class="flex flex-col justify-center items-center h-full">
-        <h1 class="text-3xl lg:text-4xl mb-2">Explore. Discover. Experience.</h1>
-        <p class="text-xl text-center mb-12">Welcome to our ticketing platform! Find and book tickets for concerts, theater, sports, and more.</p>
+        <PageHeader 
+            title="Explore. Discover. Experience."
+            subtitle="Welcome to our ticketing platform! Find and book tickets for concerts, theater, sports, and more."
+        />
     </section>
 
     <section>
@@ -25,20 +27,4 @@
         </ul>
     </section>
 </template>
-
-<style scoped>
-
-    .label {
-        transition-property: all;
-        transition-timing-function: ease;
-        line-height: 1;
-        font-size: var(--p-iftalabel-font-size);
-        font-weight: var(--p-iftalabel-font-weight);
-        inset-inline-start: var(--p-iftalabel-position-x);
-        color: var(--p-iftalabel-color);
-        transition-duration: var(--p-iftalabel-transition-duration);
-    }
-
-</style>
-
 

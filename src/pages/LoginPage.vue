@@ -5,6 +5,7 @@
     import { useRouter } from 'vue-router';
     import { useUserStore } from '@/store';
     import type { Error, GenericValue } from '@/utils/types';
+    import { PageHeader } from '@/components';
 
     const router = useRouter();
     const userStore =  useUserStore();
@@ -52,8 +53,10 @@
 
 <template>
     <section class="flex flex-col justify-center items-center h-full">
-        <h1 class="text-3xl lg:text-4xl mb-2">Welcome Back</h1>
-        <p class="text-xl text-center mb-12">Log in to access your account and explore exclusive content.</p>
+        <PageHeader 
+            title="Welcome Back"
+            subtitle="Log in to access your account and explore exclusive content."
+        />
 
         <Form v-slot="$form" :initialValues :resolver @submit="login" class="p-8 w-full rounded-md sm:w-96">
 
@@ -74,7 +77,13 @@
                     </p> 
                 </IftaLabel>
 
-                <Button type="submit" label="Submit" :loading="loading" severity="success" class="w-full" />
+                <Button 
+                    type="submit" 
+                    label="Submit" 
+                    :loading="loading" 
+                    severity="success" 
+                    class="w-full" 
+                />
             </div>
         </Form>
     </section>

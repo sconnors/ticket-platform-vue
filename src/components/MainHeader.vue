@@ -45,13 +45,14 @@
                     <router-link to="/login" class="hover:bg-gray-100 p-2 rounded-sm" activeClass="bg-gray-100">Log In</router-link> 
                 </li>
                 <li v-if="loggedIn">
-                    <button @click="logout" class="hover:bg-gray-100 p-2 rounded-sm cursor-pointer" activeClass="bg-gray-100">Log Out</button> 
+                    <button 
+                        @click="logout" 
+                        class="hover:bg-gray-100 p-2 rounded-sm cursor-pointer" 
+                        activeClass="bg-gray-100">
+                        Log Out
+                    </button> 
                 </li>                
             </ul>
         </nav>
     </header>
 </template>
-
-<style scoped>
-
-</style>

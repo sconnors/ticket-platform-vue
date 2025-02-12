@@ -12,6 +12,7 @@ html, body {
     min-height: 100%; 
 }
 
+/* overiding primevue classes */
 .p-button-success,
 .p-checkbox-checked .p-checkbox-box {
     background-color: #178740 !important;
@@ -19,4 +20,25 @@ html, body {
 
 .p-button-success:hover {
     background-color:#146c34 !important;
+}
+
+.label {
+    transition-property: all;
+    transition-timing-function: ease;
+    line-height: 1;
+    font-size: var(--p-iftalabel-font-size);
+    font-weight: var(--p-iftalabel-font-weight);
+    inset-inline-start: var(--p-iftalabel-position-x);
+    color: var(--p-iftalabel-color);
+    transition-duration: var(--p-iftalabel-transition-duration);
+}
+
+
+/*  centering, not to conflict with tailwind class */
+.abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
 }

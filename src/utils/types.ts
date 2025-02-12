@@ -19,3 +19,8 @@ export interface Error {
 export interface GenericValue {
     [key: string] : string;
 }
+
+export interface HeroProps {
+    title: string;
+    subtitle: string;
+}

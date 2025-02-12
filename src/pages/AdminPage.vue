@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { computed } from 'vue';
     import { useTicketStore } from '@/store';
-    import { Ticket, TicketForm } from '@/components';    
+    import { PageHeader, Ticket, TicketForm } from '@/components';    
 
     const ticketStore = useTicketStore();
     const tickets = computed(() => ticketStore.getTickets);
@@ -9,8 +9,11 @@
 
 <template>
     <div class="flex flex-col justify-center items-center">
-        <h1 class="text-3xl lg:text-4xl mb-2">Admin</h1>
-        <p class="text-xl text-center mb-12">Easily create and manage your events with our simple ticketing system.</p>
+
+        <PageHeader
+            title="Admin"
+            subtitle="Easily create and manage your events with our simple ticketing system."
+        />
 
         <div class="flex flex-col md:flex-row sm:p-8 gap-12 w-full"> 
             <section class="basis-1/3">
@@ -32,7 +35,3 @@
         </div>
     </div>
 </template>
-
-<style scoped>
-
-</style>
